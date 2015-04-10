@@ -13,7 +13,7 @@ package tubes;
 public class User {
     private String name;
     
-    User(){}
+    
 
     public User(String name) {
         this.name = name;
