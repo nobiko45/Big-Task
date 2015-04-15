@@ -6,6 +6,9 @@
 
 package tubes;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author 7
@@ -15,6 +18,7 @@ public class Book {
     private double harga;
     private int stock;
     private final int nbuku=0;
+    private Scanner s;
     
     public Book(String title, String category, int stock, double harga){
         this.title=title;
@@ -70,13 +74,13 @@ public class Book {
     public void setStock(int stock) {
         this.stock = stock;
     }
-    public void searchBook(Book b){
-        if(getTitle() == null){
+    public String searchBook(String title){
+        s = new Scanner(System.in);
+        if(s.next(title) == null ? getTitle() == null : s.next(title).equals(getTitle())){
             throw new IllegalArgumentException("Buku tidak ditemukan");
-        }
+        } else {
+            return "Buku = "+getTitle();
         
-    
     }
-    
-    
+  }     
 }
